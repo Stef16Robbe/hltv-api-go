@@ -60,13 +60,7 @@ func getTeamMapStats(ctx context.Context, url string) ([]MapsStats, error) {
 			stat.name = n
 		}
 		if s := sel.Find("div.stats-row:first-child").Find("span:last-of-type").Text(); s != "" {
-			var wins, draws, losses int
-
-			fmt.Sscanf(s, "%d / %d / %d", &wins, &draws, &losses)
-
-			stat.wins = wins
-			stat.draws = draws
-			stat.losses = losses
+			fmt.Sscanf(s, "%d / %d / %d", &stat.wins, &stat.draws, &stat.losses)
 		}
 
 		if stat != (MapsStats{}) {

@@ -2,40 +2,40 @@ package test_data
 
 import hltv "github.com/stef16robbe/hltv-api-go/pkg"
 
-func TeamMapStatsData() []hltv.MapsStats {
-	return []hltv.MapsStats{
+func TeamMapStatsData() []hltv.MapsStat {
+	return []hltv.MapsStat{
 		{
-			Name:   "Inferno",
+			Map:    hltv.Inferno,
 			Wins:   5,
 			Draws:  0,
 			Losses: 5,
 		},
 		{
-			Name:   "Overpass",
+			Map:    hltv.Overpass,
 			Wins:   5,
 			Draws:  0,
 			Losses: 5,
 		},
 		{
-			Name:   "Mirage",
+			Map:    hltv.Mirage,
 			Wins:   5,
 			Draws:  0,
 			Losses: 4,
 		},
 		{
-			Name:   "Nuke",
+			Map:    hltv.Nuke,
 			Wins:   4,
 			Draws:  0,
 			Losses: 5,
 		},
 		{
-			Name:   "Ancient",
+			Map:    hltv.Ancient,
 			Wins:   5,
 			Draws:  0,
 			Losses: 2,
 		},
 		{
-			Name:   "Anubis",
+			Map:    hltv.Anubis,
 			Wins:   3,
 			Draws:  0,
 			Losses: 4,

@@ -12,7 +12,7 @@ import (
 )
 
 // TODO: allow config to be passed
-func InitChrome() (context.Context, context.CancelFunc) {
+func Init() (context.Context, context.CancelFunc) {
 	ctx, cancel, err := cu.New(cu.NewConfig(
 		cu.WithTimeout(10 * time.Second),
 		// cu.WithHeadless(),
@@ -25,9 +25,9 @@ func InitChrome() (context.Context, context.CancelFunc) {
 }
 
 // https://www.hltv.org/stats/teams/maps/6667/faze?startDate=2023-02-28&endDate=2023-05-30&matchType=Lan&rankingFilter=Top20
-func GetTeamMapStats(getPage func(context.Context, string, *string) error, ctx context.Context, url string) ([]MapsStats, error) {
+func GetTeamMapStats(getPage func(context.Context, string, *string) error, ctx context.Context, url string) ([]MapsStat, error) {
 	var body string
-	var ms []MapsStats
+	var ms []MapsStat
 
 	if err := getPage(ctx, url, &body); err != nil {
 		return nil, err
@@ -35,15 +35,20 @@ func GetTeamMapStats(getPage func(context.Context, string, *string) error, ctx c
 
 	doc, _ := goquery.NewDocumentFromReader(strings.NewReader(body))
 	doc.Find("div.col").Each(func(_ int, sel *goquery.Selection) {
-		stat := MapsStats{}
+		stat := MapsStat{}
 		if n := sel.Find("div.map-pool-map-name").Text(); !strings.Contains(n, "%") && n != "" {
-			stat.Name = n
+			m, err := ParseMap(n)
+			if err != nil {
+				panic("incorrect map")
+			}
+
+			stat.Map = m
 		}
 		if s := sel.Find("div.stats-row:first-child").Find("span:last-of-type").Text(); s != "" {
 			fmt.Sscanf(s, "%d / %d / %d", &stat.Wins, &stat.Draws, &stat.Losses)
 		}
 
-		if stat != (MapsStats{}) {
+		if stat != (MapsStat{}) {
 			ms = append(ms, stat)
 		}
 	})

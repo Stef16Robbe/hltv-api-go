@@ -8,9 +8,9 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestCreateChrome(t *testing.T) {
+func TestInit(t *testing.T) {
 	assert.NotPanics(t, func() {
-		_, cancel := hltv.InitChrome()
+		_, cancel := hltv.Init()
 
 		defer cancel()
 	})

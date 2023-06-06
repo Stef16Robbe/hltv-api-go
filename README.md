@@ -15,6 +15,11 @@
     - https://github.com/chromedp/chromedp/issues/762#issuecomment-788836126
 - TODO dl hltv html so we dont have to spam request their site so no ip block :)
 - using: https://github.com/golang-standards/project-layout
+- https://blog.boot.dev/golang/golang-enum/
+- go install -v github.com/noho-digital/enumer
+    - enumer -type=Map
+    - enumer -type=Veto
+    - etc...
 
 ## Ideas:
 - recent map vetoes from both teams

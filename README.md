@@ -14,6 +14,7 @@
 - BUT the following is a more stable solution:
     - https://github.com/chromedp/chromedp/issues/762#issuecomment-788836126
 - TODO dl hltv html so we dont have to spam request their site so no ip block :)
+- using: https://github.com/golang-standards/project-layout
 
 ## Ideas:
 - recent map vetoes from both teams

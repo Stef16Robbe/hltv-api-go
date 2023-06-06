@@ -17,7 +17,7 @@ func TestCreateChrome(t *testing.T) {
 }
 
 func TestGetTeamMapStats(t *testing.T) {
-	msTest := td.GetTestGetTeamMapStatsData()
+	msTest := td.TeamMapStatsData()
 
 	ms, err := hltv.GetTeamMapStats(mockGetPage, nil, "")
 	if err != nil {

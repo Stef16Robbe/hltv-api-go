@@ -2,7 +2,7 @@ package test_data
 
 import hltv "github.com/stef16robbe/hltv-api-go/pkg"
 
-func GetTestGetTeamMapStatsData() []hltv.MapsStats {
+func TeamMapStatsData() []hltv.MapsStats {
 	return []hltv.MapsStats{
 		{
 			Name:   "Inferno",

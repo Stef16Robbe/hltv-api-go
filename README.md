@@ -25,3 +25,4 @@
 - who did these teams beat to get to this position in the tournament?
 - an indication of teamwork?
   - flash assists? (naphony)
+- introduce config: date range, team, matchType, lan yes/no

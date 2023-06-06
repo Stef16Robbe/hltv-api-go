@@ -18,9 +18,8 @@ func TestCreateChrome(t *testing.T) {
 
 func TestGetTeamMapStats(t *testing.T) {
 	msTest := td.GetTestGetTeamMapStatsData()
-	url := "https://www.hltv.org/stats/teams/maps/6667/faze?startDate=2023-02-28&endDate=2023-05-30&matchType=Lan&rankingFilter=Top20"
 
-	ms, err := hltv.GetTeamMapStats(mockGetPage, nil, url)
+	ms, err := hltv.GetTeamMapStats(mockGetPage, nil, "")
 	if err != nil {
 		panic(err)
 	}

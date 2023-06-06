@@ -24,6 +24,7 @@ func InitChrome() (context.Context, context.CancelFunc) {
 	return ctx, cancel
 }
 
+// https://www.hltv.org/stats/teams/maps/6667/faze?startDate=2023-02-28&endDate=2023-05-30&matchType=Lan&rankingFilter=Top20
 func GetTeamMapStats(getPage func(context.Context, string, *string) error, ctx context.Context, url string) ([]MapsStats, error) {
 	var body string
 	var ms []MapsStats

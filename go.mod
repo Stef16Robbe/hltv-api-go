@@ -11,6 +11,7 @@ require (
 
 require (
 	github.com/Xuanwo/go-locale v1.1.0 // indirect
+	github.com/alexflint/go-restructure v0.2.0 // indirect
 	github.com/andybalholm/cascadia v1.3.2 // indirect
 	github.com/chromedp/cdproto v0.0.0-20230605001715-1e95ea08ffe6 // indirect
 	github.com/chromedp/sysutil v1.0.0 // indirect

@@ -1,5 +1,7 @@
 package hltv
 
+// import "github.com/alexflint/go-restructure"
+
 type Map int
 
 const (
@@ -15,8 +17,8 @@ const (
 type Veto int
 
 const (
-	Remove Veto = iota
-	Pick
+	Removed Veto = iota
+	Picked
 )
 
 type MapsStat struct {
@@ -27,6 +29,7 @@ type MapsStat struct {
 }
 
 type VetoStat struct {
-	Map     Map
+	Team    string
 	PickBan Veto
+	Map     Map
 }

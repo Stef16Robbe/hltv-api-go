@@ -8,9 +8,9 @@ import (
 	"fmt"
 )
 
-const _VetoName = "RemovePick"
+const _VetoName = "RemovedPicked"
 
-var _VetoIndex = [...]uint8{0, 6, 10}
+var _VetoIndex = [...]uint8{0, 7, 13}
 
 func (i Veto) String() string {
 	if i < 0 || i >= Veto(len(_VetoIndex)-1) {
@@ -21,11 +21,11 @@ func (i Veto) String() string {
 
 var _VetoValues = []Veto{0, 1}
 
-var _VetoNames = []string{"Remove", "Pick"}
+var _VetoNames = []string{"Removed", "Picked"}
 
 var _VetoNameToValueMap = map[string]Veto{
-	_VetoName[0:6]:  0,
-	_VetoName[6:10]: 1,
+	_VetoName[0:7]:  0,
+	_VetoName[7:13]: 1,
 }
 
 // VetoString retrieves an enum value from the enum constants string name.

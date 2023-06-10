@@ -20,6 +20,8 @@
     - enumer -type=Map
     - enumer -type=Veto
     - etc...
+- BIG TODO: dynamic "last 3 months" filtering hltv...
+    - should be passable in config
 
 ## Ideas:
 - recent map vetoes from both teams

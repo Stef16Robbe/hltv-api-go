@@ -2,11 +2,13 @@ package hltv_test
 
 import (
 	"context"
+	"fmt"
 	"os"
 )
 
-func mockGetPage(ctx context.Context, url string, body *string) error {
-	tmp, err := os.ReadFile("testdata/html/get_team_map_stats.html")
+func mockGetPage(ctx context.Context, body *string, htmlName string) error {
+	fileloc := fmt.Sprintf("testdata/html/%v", htmlName)
+	tmp, err := os.ReadFile(fileloc)
 	if err != nil {
 		return err
 	}
